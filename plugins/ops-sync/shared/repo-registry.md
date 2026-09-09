@@ -4,37 +4,42 @@ All repos live flat under `~/SourceCode/`. VPS mirror at same path via `ssh vps`
 
 ## Repos
 
-| Repo | Lang | Tests | Lint | CI | Branch | VPS | Vis |
-|------|------|-------|------|----|--------|-----|-----|
-| atm-recon | py | — | — | — | master | no | priv |
-| claude-config | sh/py | pytest | shellcheck | gha | master | yes | priv |
-| etoro-portfolio | py | pytest | ruff | gha | master | no | priv |
-| etoro-tui | py | pytest | ruff | gha | master | no | priv |
-| etoro_census | ts | vitest | eslint | gha | master | yes | pub |
-| etoro_statement | py | pytest | ruff+mypy | gha | master | no | priv |
-| etoro_tickers | ts | — | — | gha | master | no | pub |
-| etorotrade | py | pytest | ruff+mypy | gha | master | yes | priv |
-| health | ts | vitest | eslint | gha | master | no | priv |
-| loans | py | pytest | ruff+mypy | gha | master | no | priv |
-| mockups | py | pytest | — | gha | master | no | priv |
-| news | py | pytest | ruff | gha | master | yes | priv |
-| outlook-access | ts | vitest | eslint | gha | master | no | priv |
-| plessas-lab | ts/py | vitest | ruff | gha | master | no | pub |
-| plessas-marketplace | py | — | ruff | gha | master | no | pub |
-| plessas-trading-stack | py | pytest | ruff | gha | master | no | priv |
-| remotion-private | ts | — | eslint | gha | master | no | priv |
-| remotion-studio | ts | vitest | eslint | gha | master | no | pub |
-| resume | ts | — | eslint | gha | master | no | pub |
-| sch-mail | py | — | — | — | master | no | priv |
-| second-brain | py | pytest | ruff | gha | master | yes | priv |
-| shared-workflows | yaml | — | — | gha | main | no | pub |
-| sw-utils | html | — | — | — | master | no | priv |
-| teams-access | ts | vitest | eslint | gha | master | no | priv |
-| telegram-bot | ts | vitest | eslint | gha | master | no | pub |
-| whatsapp-mcp | py/go | — | — | — | main | no | priv |
-| yahoo-access | py | pytest | ruff | gha | master | no | priv |
+| Repo | Lang | Tests | Lint | CI | Branch | VPS |
+|------|------|-------|------|----|--------|-----|
+| atm-recon | py | — | — | — | master | no |
+| claude-config | sh/py | pytest | shellcheck | gha | master | yes |
+| etoro-portfolio | py | pytest | ruff | gha | master | no |
+| etoro-tui | py | pytest | ruff | gha | master | no |
+| etoro_census | ts | vitest | eslint | gha | master | yes |
+| etoro_statement | py | pytest | ruff+mypy | gha | master | no |
+| etoro_tickers | ts | — | — | gha | master | no |
+| etorotrade | py | pytest | ruff+mypy | gha | master | yes |
+| health | ts | vitest | eslint | gha | master | no |
+| loans | py | pytest | ruff+mypy | gha | master | no |
+| mockups | py | pytest | — | gha | master | no |
+| news | py | pytest | ruff | gha | master | yes |
+| outlook-access | ts | vitest | eslint | gha | master | no |
+| plessas-lab | ts/py | vitest | ruff | gha | master | no |
+| plessas-marketplace | py | — | ruff | gha | master | no |
+| plessas-trading-stack | py | pytest | ruff | gha | master | no |
+| remotion-private | ts | — | eslint | gha | master | no |
+| remotion-studio | ts | vitest | eslint | gha | master | no |
+| resume | ts | — | eslint | gha | master | no |
+| sch-mail | py | — | — | — | master | no |
+| second-brain | py | pytest | ruff | gha | master | yes |
+| shared-workflows | yaml | — | — | gha | main | no |
+| sw-utils | html | — | — | — | master | no |
+| teams-access | ts | vitest | eslint | gha | master | no |
+| telegram-bot | ts | vitest | eslint | gha | master | no |
+| whatsapp-mcp | py/go | — | — | — | main | no |
+| yahoo-access | py | pytest | ruff | gha | master | no |
 
 Legend: gha = GitHub Actions, py = Python, ts = TypeScript, sh = Shell
+
+**Repo visibility is deliberately not recorded here.** It is mutable and
+safety-relevant (the PII-gauntlet rule depends on it), and a hand-maintained
+copy of it drifted to nine wrong rows, every one understating public exposure.
+Read it live instead: `gh repo list weirdapps --json name,visibility`.
 
 > `communications-marketplace` was archived + deprecated on 2026-05-25 (superseded by `plessas-marketplace`) and removed from this registry on 2026-07-20.
 

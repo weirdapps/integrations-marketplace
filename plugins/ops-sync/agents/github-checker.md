@@ -60,17 +60,28 @@ gh api repos/weirdapps/<repo>/branches/master/protection --jq '.required_status_
 
 Note: many repos may return 404 (no protection). This is YELLOW for public repos, acceptable for private experimental repos.
 
-Do NOT check branch protection for repos marked as `Vis: priv` with no CI — they're personal/experimental.
+Do NOT check branch protection for private repos with no CI — they're personal/experimental.
+Determine private/public from Step 4, never from the registry.
 
-### Step 4 — Repository Visibility Verification
+Beware a 403 here: on this plan a private repo answers
+`{"message": "Upgrade to GitHub Pro or make this repository public..."}`, which means
+protection is UNAVAILABLE, not that the branch is protected. Parse the body, not the status code.
 
-Spot-check that repos marked `pub` are actually public and vice versa:
+### Step 4 — Repository Visibility (authoritative)
+
+Visibility is read live. The registry no longer records it, because a hand-maintained
+copy of a mutable safety-relevant property drifted to nine wrong rows, every one
+understating public exposure, and that stale field is what let a real security alarm
+be dismissed for eight days.
 
 ```bash
-gh repo list weirdapps --json name,isPrivate --limit 50 2>&1
+gh repo list weirdapps --json name,visibility --limit 100 2>&1
 ```
 
-Flag any mismatch between registry and actual visibility as YELLOW.
+Treat this output as the source of truth for every downstream judgement, including
+anything that depends on the PII-gauntlet rule. Cross-check it against the
+branch-protection 403 signature above when it matters: the two are independent
+endpoints and they agree.
 
 ## Output
 

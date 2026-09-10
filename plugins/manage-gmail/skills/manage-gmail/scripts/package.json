@@ -16,7 +16,7 @@
     "@google-cloud/local-auth": "^3.0.1",
     "commander": "^15.0.0",
     "google-auth-library": "^11.0.2",
-    "googleapis": "^176.0.0"
+    "googleapis": "^178.0.0"
   },
   "//overrides": "google-auth-library ships OAuth2Client with private fields, so two copies in the tree are structurally incompatible and every google.gmail({auth}) call fails to typecheck. @google-cloud/local-auth still asks for ^9 and googleapis-common pins an exact patch, so collapse the whole tree onto the single version declared above.",
   "overrides": {

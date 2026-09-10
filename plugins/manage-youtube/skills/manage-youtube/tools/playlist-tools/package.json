@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "google-auth-library": "^11.0.2",
-    "googleapis": "^176.0.0"
+    "googleapis": "^178.0.0"
   },
   "//overrides": "OAuth2Client has private fields, so two copies of google-auth-library in the tree are structurally incompatible and google.youtube({auth}) fails to typecheck. googleapis-common pins an exact patch, so collapse the tree onto the single version declared above.",
   "overrides": {
